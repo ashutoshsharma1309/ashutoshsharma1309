@@ -1,5 +1,5 @@
 # 💫 About Me:
-1. Currently: Undergraduate CS student diving deep into Web2, Machine Learning, and DSA.<br>2. Collaboration: Open-source projects, especially those focused on web development, machine learning tools, or developer tooling.<br>3. Learning: Making my first meaningful open-source contributions. I'm eager to learn from experienced developers through code reviews, project guidance, and real-world collaboration.
+1.Currently: Undergraduate CS student diving deep into Web2, Machine Learning, and DSA.<br>2. Collaboration: Open-source projects, especially those focused on web development, machine learning tools, or developer tooling.<br>3. Learning: Making my first meaningful open-source contributions. I'm eager to learn from experienced developers through code reviews, project guidance, and real-world collaboration.
 
 
 ## 🌐 Socials:
