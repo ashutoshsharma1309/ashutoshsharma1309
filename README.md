@@ -3,48 +3,22 @@
 <div align="center">
 
   <a href="https://ashutoshsharma1309.vercel.app">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=30&pause=1000&color=7AA2F7&center=true&vCenter=true&width=560&lines=Hi%2C+I'm+Ashutosh+Sharma;%3Cthinking-in-algorithms+%2F%3E;Full-Stack+Developer+%2B+GenAI+Builder" alt="Ashutosh Sharma" />
+    <img src="./assets/header.svg" alt="ashutosh@GitHub — terminal card" width="100%" />
   </a>
 
-  <br/>
+  <br/><br/>
 
   <a href="https://ashutoshsharma1309.vercel.app"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
   <a href="https://linkedin.com/in/ashutoshsharma1309"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
   <a href="mailto:ashutoshsharma1395@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
   <a href="https://leetcode.com/u/ashutoshsharma1309"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/></a>
-  <img src="https://komarev.com/ghpvc/?username=ashutoshsharma1309&style=for-the-badge&color=7AA2F7&label=PROFILE+VIEWS" alt="Profile views"/>
+  <img src="https://komarev.com/ghpvc/?username=ashutoshsharma1309&style=for-the-badge&color=ff6b6b&label=PROFILE+VIEWS" alt="Profile views"/>
 
 </div>
 
-<br/>
-
-<!-- ─────────────────────────  TERMINAL CARD  ────────────────────────── -->
-
-```ansi
-ashutosh@GitHub
-───────────────────────────────────────────────
-Focus:    Building things that actually ship
-Edu:      B.E. CSE @ BMSIT&M  ·  CGPA 8.7  ·  '24–'28
-Roles:    Full-Stack Dev  ·  GenAI Builder  ·  CP
-CP:       900+ solved on LeetCode
-Lang:     C++  ·  Python  ·  TypeScript  ·  Swift  ·  Java
-Web:      React  ·  Node  ·  Express  ·  FastAPI
-Data:     PostgreSQL  ·  MongoDB  ·  Redis  ·  Prisma  ·  BullMQ
-AI/ML:    Claude  ·  OpenAI  ·  Gemini  ·  LangChain  ·  TensorFlow
-Ships:    LGTM  ·  PrepNext  ·  AgriSmart
-
-Contact
-───────────────────────────────────────────────
-Site:     ashutoshsharma1309.vercel.app
-LinkedIn: in/ashutoshsharma1309
-Email:    ashutoshsharma1395@gmail.com
-
-ashutosh@dev ~> # thanks for stopping by :)_
-```
-
 <!-- ─────────────────────────────  INTRO  ────────────────────────────── -->
 
-## 👋 About Me
+## Hi, I'm Ashutosh 👋 — I turn messy problems into working solutions.
 
 > I'm a **CS undergrad at BMSIT&M, Bengaluru**, building full-stack products and GenAI systems that hold up in the real world. I like problems where the data is messy, the assumptions break, and careful engineering actually matters — from multi-LLM code-review pipelines to campus placement platforms serving real users. Aiming for **SDE / AI-Engineering roles and research-oriented internships**.
 
@@ -170,12 +144,12 @@ A **watchOS/Swift** app streaming live heart-rate, SpO₂ and motion from Apple 
 
 <div align="center">
 
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=ashutoshsharma1309&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=tokyonight&title_color=7AA2F7&icon_color=7AA2F7" alt="stats"/>
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=ashutoshsharma1309&hide_border=true&theme=tokyonight&ring=7AA2F7&fire=7AA2F7&currStreakLabel=7AA2F7" alt="streak"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=ashutoshsharma1309&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=tokyonight&title_color=ff6b6b&icon_color=ff6b6b" alt="stats"/>
+  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=ashutoshsharma1309&hide_border=true&theme=tokyonight&ring=ff6b6b&fire=ff6b6b&currStreakLabel=ff6b6b" alt="streak"/>
 
   <br/>
 
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ashutoshsharma1309&layout=compact&hide_border=true&langs_count=8&theme=tokyonight&title_color=7AA2F7" alt="top langs"/>
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ashutoshsharma1309&layout=compact&hide_border=true&langs_count=8&theme=tokyonight&title_color=ff6b6b" alt="top langs"/>
 
   <br/><br/>
 
