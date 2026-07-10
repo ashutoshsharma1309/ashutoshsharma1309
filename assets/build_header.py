@@ -55,12 +55,35 @@ card_h = TOP + (len(card) + 3) * CH_H
 HEIGHT = int(max(art_h, card_h) + PAD + 30)
 WIDTH = int(CARD_X + card_chars * CH_W + PAD + 8)
 
-def t(x, y, s, fill, weight="normal"):
-    # pin every run to an exact grid width so layout is font-independent
-    tl = max(len(s), 1) * CH_W
-    return (f'<text x="{x:.1f}" y="{y:.1f}" fill="{fill}" font-weight="{weight}" '
-            f'textLength="{tl:.1f}" lengthAdjust="spacingAndGlyphs" '
-            f'xml:space="preserve">{escape(s)}</text>')
+# ---------------------------------------------------------------- animation
+# Timeline (seconds): boot bar -> logo reveal -> card types in -> cursor blink.
+BOOT_END   = 1.55      # boot group fades out here
+LOGO_T     = 1.85      # first logo line reveals
+LOGO_STAG  = 0.045     # per-line stagger
+CARD_STAG  = 0.05
+REV_DUR    = 0.30      # fade-in duration per line
+
+
+def fade_in(begin):
+    return (f'<animate attributeName="opacity" from="0" to="1" '
+            f'begin="{begin:.2f}s" dur="{REV_DUR}s" fill="freeze"/>')
+
+
+def t(x, y, s, fill, weight="normal", delay=None, anchor=None, grid=True):
+    attrs = [f'x="{x:.1f}"', f'y="{y:.1f}"', f'fill="{fill}"',
+             f'font-weight="{weight}"']
+    if grid:  # pin to the monospace grid so layout is font-independent
+        attrs += [f'textLength="{max(len(s),1)*CH_W:.1f}"',
+                  'lengthAdjust="spacingAndGlyphs"']
+    if anchor:
+        attrs.append(f'text-anchor="{anchor}"')
+    inner = ""
+    if delay is not None:
+        attrs.append('opacity="0"')
+        inner = fade_in(delay)
+    return (f'<text {" ".join(attrs)} xml:space="preserve">'
+            f'{escape(s)}{inner}</text>')
+
 
 parts = []
 # background window
@@ -70,37 +93,62 @@ parts.append(f'<rect x="1" y="1" width="{WIDTH-2}" height="{HEIGHT-2}" rx="11" f
 for i, c in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
     parts.append(f'<circle cx="{22 + i*20}" cy="18" r="6" fill="{c}"/>')
 
-# ascii art
-y = TOP + 26
-for ln in lines:
-    parts.append(t(ART_X, y, ln, ART))
-    y += CH_H
+# ---- boot loader (centered), fades away after BOOT_END ------------------
+cxm, mid = WIDTH / 2, HEIGHT * 0.44
+barw = 260
+barx = cxm - barw / 2
+boot = []
+boot.append(t(cxm, mid - 18, "booting  ashutosh.profile", VAL, "bold",
+              anchor="middle", grid=False))
+boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="{barw}" height="13" rx="4" fill="none" stroke="{DIM}"/>')
+boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="0" height="13" rx="4" fill="{GREEN}">'
+            f'<animate attributeName="width" from="0" to="{barw}" begin="0.25s" dur="{BOOT_END-0.35:.2f}s" fill="freeze"/></rect>')
+boot.append(t(cxm, mid + 33, "loading modules . . .", DIM, anchor="middle", grid=False))
+parts.append(f'<g>{"".join(boot)}'
+             f'<animate attributeName="opacity" from="1" to="0" begin="{BOOT_END:.2f}s" dur="0.35s" fill="freeze"/></g>')
 
-# info card
+# ---- ascii logo: reveal line by line -----------------------------------
+y = TOP + 26
+for i, ln in enumerate(lines):
+    parts.append(t(ART_X, y, ln, ART, delay=LOGO_T + i * LOGO_STAG))
+    y += CH_H
+logo_end = LOGO_T + len(lines) * LOGO_STAG
+
+# ---- info card: types in row by row ------------------------------------
 y = TOP + 26
 rule = "─" * 34
+row = 0
+CARD_T = logo_end - 0.25          # start slightly before the logo finishes
+def cd():                          # delay for the current card row
+    return CARD_T + row * CARD_STAG
 for item in card:
     kind = item[0]
     if kind == "hdr":
-        parts.append(f'<rect x="{CARD_X-6:.1f}" y="{y-12:.1f}" width="{len(item[1])*CH_W+12:.1f}" height="18" rx="3" fill="{RED}"/>')
-        parts.append(t(CARD_X, y, item[1], "#0d0f17", "bold"))
-        y += CH_H
+        d = cd()
+        parts.append(f'<rect x="{CARD_X-6:.1f}" y="{y-12:.1f}" width="{len(item[1])*CH_W+12:.1f}" height="18" rx="3" fill="{RED}" opacity="0">{fade_in(d)}</rect>')
+        parts.append(t(CARD_X, y, item[1], "#0d0f17", "bold", delay=d))
+        y += CH_H; row += 1
     elif kind == "rule":
-        parts.append(t(CARD_X, y, rule, DIM))
-        y += CH_H
+        parts.append(t(CARD_X, y, rule, DIM, delay=cd()))
+        y += CH_H; row += 1
     elif kind == "gap":
         y += CH_H * 0.6
     elif kind == "kv":
         _, k, v = item
-        label = (k + ":").ljust(10)
-        parts.append(t(CARD_X, y, label, KEY, "bold"))
-        parts.append(t(CARD_X + 10 * CH_W, y, v, VAL))
-        y += CH_H
+        d = cd()
+        parts.append(t(CARD_X, y, (k + ":").ljust(10), KEY, "bold", delay=d))
+        parts.append(t(CARD_X + 10 * CH_W, y, v, VAL, delay=d))
+        y += CH_H; row += 1
 
-# prompt line
+# ---- prompt line + blinking cursor -------------------------------------
+PROMPT_T = max(logo_end, CARD_T + row * CARD_STAG) + 0.15
 py = HEIGHT - PAD
-parts.append(t(PAD, py, "ashutosh@dev ~>", KEY, "bold"))
-parts.append(t(PAD + 16 * CH_W, py, "# thanks for stopping by :)_", GREEN))
+parts.append(t(PAD, py, "ashutosh@dev ~>", KEY, "bold", delay=PROMPT_T))
+parts.append(t(PAD + 16 * CH_W, py, "# thanks for stopping by :)", GREEN, delay=PROMPT_T))
+cur_x = PAD + (16 + 27) * CH_W
+parts.append(f'<rect x="{cur_x:.1f}" y="{py-11:.1f}" width="{CH_W*0.85:.1f}" height="13" fill="{GREEN}" opacity="0">'
+             f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.5;0.5;1" '
+             f'dur="1s" begin="{PROMPT_T+0.25:.2f}s" repeatCount="indefinite"/></rect>')
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" font-family="'JetBrains Mono','Fira Code',Consolas,monospace" font-size="12.5px">
 {chr(10).join(parts)}
