@@ -1,36 +1,22 @@
 #!/usr/bin/env python3
-"""Convert the GitHub avatar into ASCII art and render a Daksh-style
-terminal banner as an SVG (ASCII portrait left, info card right)."""
+"""Render a Daksh-style terminal banner as an SVG: ASCII art (from image.txt)
+on the left, info card on the right."""
 
-from PIL import Image, ImageOps, ImageEnhance
 from html import escape
 
 # ---------------------------------------------------------------- ASCII art
-# Cool-cat (clean vector art): bright fur -> dense glyphs, lenses/bg -> empty.
-RAMP = " .:-=+*#%@"
-COLS = 54                     # character columns in the portrait
-ASPECT = 0.52                 # terminal cell h/w correction
-
-img = Image.open("assets/_cat.png").convert("L")
-img = img.crop((60, 40, 580, 600))                      # crop to the cat
-w, h = img.size
-rows = int(COLS * (h / w) * ASPECT)
-img = img.resize((COLS, rows))
-px = img.load()
-
-lines = []
-for y in range(rows):
-    row = []
-    for x in range(COLS):
-        row.append(RAMP[int(px[x, y] / 256 * len(RAMP))])
-    lines.append("".join(row).rstrip())
+# Literal ASCII logo taken verbatim from image.txt.
+with open("image.txt") as f:
+    lines = [ln.rstrip("\n") for ln in f.read().splitlines()]
+lines = [ln for ln in lines if ln.strip()]      # drop blank lines
+COLS = max(len(ln) for ln in lines)
 
 # ---------------------------------------------------------------- info card
 RED = "#ff6b6b"       # header labels (Daksh uses a red/pink)
 KEY = "#f7768e"       # key labels
 VAL = "#c0caf5"       # values
 DIM = "#565f89"       # divider / dim
-ART = "#7a8299"       # ascii art colour
+ART = "#e2e6f3"       # ascii art colour (bright bat)
 GREEN = "#9ece6a"     # prompt comment
 
 card = [
