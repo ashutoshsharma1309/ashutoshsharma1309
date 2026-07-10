@@ -26,13 +26,32 @@ The contribution-graph snake needs the GitHub Action to run once to create the i
 3. It generates the SVGs and pushes them to an `output` branch — the README already points there.
    After the first run (and every 12h after), the snake will render.
 
+## Editing the animated banner
+
+The terminal banner is a self-contained SVG generated from two inputs:
+
+- **`image.txt`** — the ASCII logo on the left (paste any ASCII art).
+- **`assets/build_header.py`** — the info card, colors, and animation timeline.
+
+After any change, regenerate and commit:
+
+```bash
+python3 assets/build_header.py      # rewrites assets/header.svg
+git add image.txt assets/ && git commit -m "update banner" && git push
+```
+
+Useful knobs in `build_header.py`:
+
+- **`card`** — the info-card rows (Focus, Roles, Lang, Contact, …).
+- **`RED` / `ART` / `GREEN`** — accent, logo, and prompt colors.
+- **`BOOT_END` / `LOGO_T` / `LOGO_STAG` / `CARD_STAG`** — the animation timing.
+
 ## Things you may want to edit
 
 - **LeetCode username** — the badge/link assumes `ashutoshsharma1309`. Fix if different.
-- **Card theme** — all cards use `tokyonight`. Swap the `theme=` param in `README.md`
-  for `radical`, `dark`, `dracula`, `catppuccin_mocha`, etc.
-- **Accent color** — currently `7AA2F7` (blue). Find/replace to recolor typing header + cards.
-- **Project links** — the project cards have no repo links yet; wrap the titles in
-  `[### 🔍 LGTM](https://github.com/...)` style links once repos are public.
+- **Card theme** — the two GitHub-stats cards use `tokyonight`; swap the `theme=` param
+  in `README.md` for `dark`, `dracula`, `catppuccin_mocha`, etc. Accent is `ff6b6b`.
+- **Project links** — the project cards have no repo links yet; wrap a title in
+  `[**🔍 LGTM**](https://github.com/…)` once each repo is public.
 
 Everything else pulls live from your GitHub — no maintenance needed.
