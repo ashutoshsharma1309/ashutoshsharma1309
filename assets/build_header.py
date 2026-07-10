@@ -6,17 +6,13 @@ from PIL import Image, ImageOps, ImageEnhance
 from html import escape
 
 # ---------------------------------------------------------------- ASCII art
-# Ramp low->high glyph density. Inverted source => dark subject renders dense.
+# Cool-cat (clean vector art): bright fur -> dense glyphs, lenses/bg -> empty.
 RAMP = " .:-=+*#%@"
 COLS = 54                     # character columns in the portrait
-ASPECT = 0.50                 # terminal cell h/w correction
+ASPECT = 0.52                 # terminal cell h/w correction
 
-img = Image.open("assets/_avatar.png").convert("L")
-w, h = img.size
-img = img.crop((int(w * 0.10), int(h * 0.01), int(w * 0.90), int(h * 0.66)))  # bust crop
-img = ImageOps.autocontrast(img, cutoff=3)
-img = ImageEnhance.Contrast(img).enhance(1.35)
-img = ImageOps.invert(img)                                          # subject -> bright
+img = Image.open("assets/_cat.png").convert("L")
+img = img.crop((60, 40, 580, 600))                      # crop to the cat
 w, h = img.size
 rows = int(COLS * (h / w) * ASPECT)
 img = img.resize((COLS, rows))
