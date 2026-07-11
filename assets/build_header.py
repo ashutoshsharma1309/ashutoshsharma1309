@@ -121,7 +121,7 @@ boot.append(t(cxm, mid - 18, "> booting portfolio...", GREEN, "bold",
 boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="{barw}" height="13" rx="4" fill="none" stroke="{DIM}"/>')
 boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="0" height="13" rx="4" fill="{GREEN}">'
             f'<animate attributeName="width" from="0" to="{barw}" begin="0.25s" dur="{BOOT_END-0.35:.2f}s" fill="freeze"/></rect>')
-boot.append(t(cxm, mid + 33, "loading modules . . .", DIM, anchor="middle", grid=False))
+boot.append(t(cxm, mid + 33, "booting portfolio", DIM, anchor="middle", grid=False))
 parts.append(f'<g>{"".join(boot)}'
              f'<animate attributeName="opacity" from="1" to="0" begin="{BOOT_END:.2f}s" dur="0.35s" fill="freeze"/></g>')
 
@@ -168,16 +168,6 @@ for item in card:
         parts.append(t(CARD_X, y, (k + ":").ljust(LW), KEY, "bold", delay=d))
         parts.append(t(CARD_X + LW * CH_W, y, v, VAL, delay=d))
         y += CH_H; row += 1
-
-# ---- prompt line + blinking cursor -------------------------------------
-PROMPT_T = max(logo_end, CARD_T + row * CARD_STAG) + 0.15
-py = HEIGHT - PAD
-parts.append(t(PAD, py, "ashutosh@dev ~>", KEY, "bold", delay=PROMPT_T))
-parts.append(t(PAD + 16 * CH_W, py, "# thanks for stopping by :)", VAL, delay=PROMPT_T))
-cur_x = PAD + (16 + 27) * CH_W
-parts.append(f'<rect x="{cur_x:.1f}" y="{py-11:.1f}" width="{CH_W*0.85:.1f}" height="13" fill="{VAL}" opacity="0">'
-             f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.5;0.5;1" '
-             f'dur="1s" begin="{PROMPT_T+0.25:.2f}s" repeatCount="indefinite"/></rect>')
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" font-family="'JetBrains Mono','Fira Code',Consolas,monospace" font-size="12.5px">
 {chr(10).join(parts)}
