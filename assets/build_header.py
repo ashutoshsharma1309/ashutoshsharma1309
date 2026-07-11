@@ -17,7 +17,7 @@ RED = "#ffd200"       # header bar (Batman yellow)
 KEY = "#ffd200"       # key labels (Focus, Edu, …) — Batman yellow
 VAL = "#ffffff"       # values — white
 DIM = "#3a3a3a"       # divider / dim
-ART = "#ffd200"       # ascii art colour (yellow bat)
+ART = "#ffffff"       # ascii art colour (white bat)
 GREEN = "#9ece6a"     # prompt comment
 
 card = [
