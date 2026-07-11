@@ -116,6 +116,8 @@ cxm, mid = WIDTH / 2, HEIGHT * 0.44
 barw = 260
 barx = cxm - barw / 2
 boot = []
+boot.append(t(cxm, mid - 44, "> booting portfolio...", GREEN,
+              anchor="middle", grid=False))
 boot.append(t(cxm, mid - 18, "booting  ashutosh.profile", VAL, "bold",
               anchor="middle", grid=False))
 boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="{barw}" height="13" rx="4" fill="none" stroke="{DIM}"/>')
