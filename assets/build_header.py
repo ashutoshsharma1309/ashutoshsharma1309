@@ -36,9 +36,11 @@ card = [
     ("gap", ""),
     ("hdr",  "Contact"),
     ("rule", ""),
-    ("kv", "Site",     "https://ashutoshsharma1309.vercel.app"),
-    ("kv", "LinkedIn", "https://www.linkedin.com/in/ashutoshsharma1309/"),
-    ("kv", "Email",    "ashutoshsharma1395@gmail.com"),
+    ("kv", "Site",       "https://ashutoshsharma1309.vercel.app"),
+    ("kv", "LinkedIn",   "https://www.linkedin.com/in/ashutoshsharma1309/"),
+    ("kv", "LeetCode",   "https://leetcode.com/u/agh0r/"),
+    ("kv", "Codeforces", "https://codeforces.com/profile/agh0r"),
+    ("kv", "Email",      "ashutoshsharma1395@gmail.com"),
 ]
 
 INDENT = 4            # spaces the value lines under a section label are indented

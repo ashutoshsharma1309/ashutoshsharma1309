@@ -39,7 +39,7 @@ Useful knobs in `build_header.py`:
 
 ## Things you may want to edit
 
-- **LeetCode username** — the badge/link assumes `ashutoshsharma1309`. Fix if different.
+- **LeetCode / Codeforces** — the badges/links use the handle `agh0r`. Fix if different.
 - **Card theme** — the two GitHub-stats cards use `tokyonight`; swap the `theme=` param
   in `README.md` for `dark`, `dracula`, `catppuccin_mocha`, etc. Accent is `ff6b6b`.
 - **Project links** — the project cards have no repo links yet; wrap a title in
