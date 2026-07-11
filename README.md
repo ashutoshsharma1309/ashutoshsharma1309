@@ -104,13 +104,16 @@ Native **SwiftUI** watchOS/iOS app built with **HealthKit, CoreMotion, WatchConn
 
 I reach for whatever fits the problem — most often:
 
-| | |
+| **Category** | **Technologies** |
 |---|---|
-| **Languages** | C++ · Python · TypeScript · Java · Swift · SQL |
-| **Backend** | Node · Express · FastAPI · Flask |
-| **Data** | PostgreSQL · MongoDB · Redis · Prisma |
-| **AI / ML** | Claude · OpenAI · Gemini · LangChain · TensorFlow |
-| **Tooling** | Git · Docker · AWS · Linux · Figma |
+| **Languages** | C++ · Python · TypeScript · JavaScript · Java · Swift · SQL |
+| **Frontend** | React · Next.js · Tailwind CSS · HTML5 · CSS3 · SwiftUI |
+| **Backend** | Node.js · Express · FastAPI · Flask · REST APIs · WebSockets |
+| **Data** | PostgreSQL · MongoDB · Redis · Prisma ORM · Supabase |
+| **AI / ML** | TensorFlow · OpenAI · Claude · Gemini · LangChain · RAG · Vector Embeddings |
+| **Cloud & DevOps** | Docker · AWS · Linux · GitHub Actions · Vercel · Render |
+| **Mobile** | Swift · SwiftUI · watchOS · HealthKit · CoreMotion · WatchConnectivity |
+| **Tooling** | Git · Figma · Postman · BullMQ · Socket.IO · Tree-sitter |
 
 <!-- ────────────────────────────  STATS  ─────────────────────────────── -->
 
