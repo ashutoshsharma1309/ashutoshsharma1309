@@ -17,15 +17,6 @@ git remote add origin https://github.com/ashutoshsharma1309/ashutoshsharma1309.g
 git push -u origin main
 ```
 
-## 3. Turn on the snake animation
-
-The contribution-graph snake needs the GitHub Action to run once to create the images:
-
-1. Go to the repo → **Actions** tab → enable workflows if prompted.
-2. Open **"Generate Snake Animation"** → **Run workflow**.
-3. It generates the SVGs and pushes them to an `output` branch — the README already points there.
-   After the first run (and every 12h after), the snake will render.
-
 ## Editing the animated banner
 
 The terminal banner is a self-contained SVG generated from two inputs:

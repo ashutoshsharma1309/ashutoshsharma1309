@@ -110,19 +110,7 @@ I reach for whatever fits the problem — most often:
 - **2nd Prize** — RVCE Hackathon &nbsp;·&nbsp; **2nd Prize** — E-Cell Hackathon, BMSIT&M (2025)
 - **Best 2nd-Year Team** — Kalarava Coding Competition, BMSIT&M (2025)
 
-<!-- ─────────────────────────  SNAKE + FOOTER  ───────────────────────── -->
-
-## Contribution Graph
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ashutoshsharma1309/ashutoshsharma1309/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ashutoshsharma1309/ashutoshsharma1309/output/github-contribution-grid-snake.svg" />
-    <img alt="Ashutosh's contribution graph rendered as a snake game" src="https://raw.githubusercontent.com/ashutoshsharma1309/ashutoshsharma1309/output/github-contribution-grid-snake.svg" />
-  </picture>
-</div>
-
-<br/>
+<!-- ─────────────────────────  FOOTER  ───────────────────────── -->
 
 <div align="center">
   <sub>Open to interesting problems and collaborations &nbsp;·&nbsp; <a href="mailto:ashutoshsharma1395@gmail.com">ashutoshsharma1395@gmail.com</a></sub>
