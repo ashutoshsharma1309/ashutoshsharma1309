@@ -20,15 +20,36 @@
 
 ## Hi, I'm Ashutosh 👋
 
-CS undergraduate.
+Backend Software Engineer building intelligent systems at the intersection of **AI**, **Distributed Computing**, and **Scalable Backend Architecture**.
 
-Building scalable software at the intersection of **Backend Engineering**, **AI Systems**, and **Distributed Computing**.
+I enjoy solving engineering problems involving LLM orchestration, distributed services, real-time systems, and backend infrastructure. My work focuses on designing reliable software that performs well under real-world constraints.
 
-### Focus
+## Areas of Interest
 
-- AI Agents &nbsp;·&nbsp; RAG &nbsp;·&nbsp; LLM Orchestration
-- Backend Systems &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; PostgreSQL
-- C++ &nbsp;·&nbsp; System Design &nbsp;·&nbsp; Algorithms
+- Backend Infrastructure
+- AI Systems
+- Distributed Computing
+- System Design
+- Performance Engineering
+
+## Currently Building
+
+- Multi-Agent AI &nbsp;·&nbsp; MCP &nbsp;·&nbsp; RAG
+- FastAPI &nbsp;·&nbsp; Node.js &nbsp;·&nbsp; PostgreSQL &nbsp;·&nbsp; Redis
+- Docker &nbsp;·&nbsp; AWS &nbsp;·&nbsp; WebSockets
+- C++ &nbsp;·&nbsp; Algorithms &nbsp;·&nbsp; Operating Systems
+
+## Highlights
+
+🏆 10× Hackathon Winner & Podium Finisher
+
+👨‍💻 1500+ Algorithmic Problems Solved (LeetCode + Codeforces)
+
+🚀 Built AI-powered code intelligence using Tree-sitter, PageRank, OpenAI & Gemini
+
+⚡ Developed production-scale backend services with Redis, BullMQ, PostgreSQL & FastAPI
+
+🌍 Built multilingual AI applications serving users across 45+ languages
 
 <!-- ────────────────────────────  PROJECTS  ──────────────────────────── -->
 
