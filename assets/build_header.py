@@ -30,7 +30,7 @@ card = [
     ("sec", "Core CS",   ["DSA • OS • CN • DBMS • System Design"]),
     ("sec", "Languages", ["C++ • Python • TypeScript"]),
     ("sec", "Stack",     ["FastAPI • Express", "PostgreSQL • Redis", "Docker • Linux"]),
-    ("sec", "AI",        ["OpenAI", "Gemini", "LangGraph", "MCP"]),
+    ("sec", "AI",        ["Claude", "OpenAI", "Gemini", "Perplexity"]),
     ("sec", "Projects",  ["LGTM", "PrepNext", "NexusOS", "AgriSmart"]),
     ("gap", ""),
     ("hdr",  "Contact"),
