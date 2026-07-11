@@ -61,16 +61,16 @@ I enjoy solving engineering problems involving LLM orchestration, distributed se
 
 **🔍 LGTM** — AI Code Review & Repo-Health
 
-Parses repos with **Tree-sitter AST** (12 languages) and ranks files via a **PageRank graph** to compress whole-repo context into a 4K-token map. A **multi-LLM layer** (Claude · OpenAI · Gemini) with per-key pooling, retries and BYOK isolation, indexed by a multi-agent pipeline on **BullMQ/Redis** with live Socket.io progress.
+Parses repositories using **Tree-sitter AST** (12+ languages) and builds a **PageRank-based dependency graph** to generate context-aware repository embeddings. Powered by **BullMQ/Redis** workers, **MongoDB**, and a **multi-LLM orchestration layer** (Claude · OpenAI · Gemini) with BYOK isolation and Socket.IO streaming. Features: AI code review, repo health scoring, duplicate detection, incremental indexing, semantic code search, dependency analysis, and real-time indexing progress.
 
-<sub>`React` · `Node.js` · `MongoDB` · `Redis` · `BullMQ` · `Tree-sitter`</sub>
+<sub>`React` · `Node.js` · `MongoDB` · `Redis` · `BullMQ` · `Tree-sitter` · `Socket.IO`</sub>
 
 </td>
 <td width="50%" valign="top">
 
 **🎓 PrepNext** — Campus Placement Platform
 
-Full-stack TypeScript platform (React SPA + serverless Express) spanning **20+ routes**, unifying 85+ recruiters, 82+ verified PYQs and 150 DSA problems. An **18-table** Prisma/PostgreSQL schema on Supabase with strict per-user isolation, **Google OAuth** + server-verified JWTs, and a WCAG-minded dark/light UI.
+Full-stack TypeScript platform (**React + Express + Prisma + PostgreSQL + Supabase**) with **20+ REST APIs**, a normalized relational schema, server-side JWT verification, **Google OAuth**, RBAC, and optimized query pipelines. Features: recruiter dashboard, company drive management, resume uploads, application tracking, eligibility filtering, 85+ verified recruiters, 150+ DSA problems, PYQ repository, analytics, bookmarks, and a responsive WCAG-compliant dark/light UI.
 
 <sub>`React` · `TypeScript` · `Express` · `Prisma` · `PostgreSQL` · `Supabase`</sub>
 
@@ -79,20 +79,20 @@ Full-stack TypeScript platform (React SPA + serverless Express) spanning **20+ r
 <tr>
 <td width="50%" valign="top">
 
-**🌾 AgriSmart** — Crop-Advisory Web App
+**🌾 AgriSmart** — AI Crop Advisory Web App
 
-Tailored recommendations from **location, season and soil** with real-time weather alerts. Ships a **multilingual chatbot** (speech-to-text + voice across 45+ languages) and **ML crop-disease detection** (CNN, 38 classes) — diagnosis and treatment from a single leaf photo.
+ML-powered agriculture platform trained on Kaggle crop-recommendation and **PlantVillage** disease datasets using **TensorFlow/Keras CNN** for leaf classification and supervised models for crop prediction. Processes soil nutrients (NPK), pH, temperature, humidity, rainfall and seasonal data with real-time weather APIs. Features: AI disease diagnosis with confidence scores, fertilizer & pesticide recommendations, irrigation planning, treatment suggestions, multilingual voice chatbot (45+ languages), image-based leaf analysis, weather alerts, and personalized crop insights.
 
-<sub>`Full-Stack` · `TensorFlow` · `CNN` · `Multilingual AI`</sub>
+<sub>`TensorFlow` · `Keras` · `CNN` · `Multilingual AI` · `Weather APIs`</sub>
 
 </td>
 <td width="50%" valign="top">
 
-**⌚ CardioGuard** — watchOS SOS & Detection
+**❤️ CardioGuard** — watchOS Emergency Detection
 
-A **watchOS/Swift** app streaming live heart-rate, SpO₂ and motion from Apple Watch to flag probable cardiac arrest in real time — with **tiered SOS escalation** that alerts the nearest hospital plus an emergency contact and plays audio CPR guidance for bystanders.
+Native **SwiftUI** watchOS/iOS app built with **HealthKit, CoreMotion, WatchConnectivity, AVFoundation** and background sensor streaming to continuously monitor heart rate, SpO₂, motion and fall events with low-latency sync between Apple Watch and iPhone. Features: real-time cardiac anomaly detection, tiered SOS escalation, automatic emergency-contact alerts, nearest-hospital navigation, live CPR voice guidance, event history, health-trend visualization, configurable thresholds, and battery-optimized continuous monitoring.
 
-<sub>`Swift` · `watchOS` · `HealthKit` · `Real-time`</sub>
+<sub>`SwiftUI` · `watchOS` · `HealthKit` · `CoreMotion` · `Real-time`</sub>
 
 </td>
 </tr>
