@@ -53,6 +53,6 @@
 <text x="488.8" y="303.8" fill="#ffd200" font-weight="bold" textLength="75.5" lengthAdjust="spacingAndGlyphs" opacity="0" xml:space="preserve">Email:    <animate attributeName="opacity" from="0" to="1" begin="3.12s" dur="0.3s" fill="freeze"/></text>
 <text x="564.3" y="303.8" fill="#ffffff" font-weight="normal" textLength="211.4" lengthAdjust="spacingAndGlyphs" opacity="0" xml:space="preserve">ashutoshsharma1395@gmail.com<animate attributeName="opacity" from="0" to="1" begin="3.12s" dur="0.3s" fill="freeze"/></text>
 <text x="26.0" y="376.0" fill="#ffd200" font-weight="bold" textLength="113.2" lengthAdjust="spacingAndGlyphs" opacity="0" xml:space="preserve">ashutosh@dev ~&gt;<animate attributeName="opacity" from="0" to="1" begin="3.31s" dur="0.3s" fill="freeze"/></text>
-<text x="146.8" y="376.0" fill="#9ece6a" font-weight="normal" textLength="203.8" lengthAdjust="spacingAndGlyphs" opacity="0" xml:space="preserve"># thanks for stopping by :)<animate attributeName="opacity" from="0" to="1" begin="3.31s" dur="0.3s" fill="freeze"/></text>
+<text x="146.8" y="376.0" fill="#ffffff" font-weight="normal" textLength="203.8" lengthAdjust="spacingAndGlyphs" opacity="0" xml:space="preserve"># thanks for stopping by :)<animate attributeName="opacity" from="0" to="1" begin="3.31s" dur="0.3s" fill="freeze"/></text>
 <rect x="350.6" y="365.0" width="6.4" height="13" fill="#9ece6a" opacity="0"><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.5;0.5;1" dur="1s" begin="3.56s" repeatCount="indefinite"/></rect>
 </svg>
