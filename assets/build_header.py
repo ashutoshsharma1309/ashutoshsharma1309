@@ -23,15 +23,18 @@ GREEN = "#9ece6a"     # prompt comment
 card = [
     ("hdr",  "ashutoshsharma1309@github"),
     ("rule", ""),
-    ("kv", "Focus",     "Building things that actually ship"),
-    ("kv", "Edu",       "B.E. CSE @ BMSIT&M"),
-    ("kv", "Roles",     "Software Developer  ·  ML Engineer"),
-    ("kv", "CP",        "900+ on LeetCode  ·  600+ on Codeforces"),
-    ("kv", "Languages", "C++  ·  C  ·  Python  ·  TypeScript  ·  Swift  ·  JavaScript"),
-    ("kv", "Web",       "React  ·  Node  ·  Express  ·  FastAPI"),
-    ("kv", "Database",  "MongoDB  ·  Supabase  ·  Redis  ·  Prisma"),
-    ("kv", "AI/ML",     "Claude  ·  OpenAI  ·  Gemini  ·  Perplexity"),
-    ("kv", "Ships",     "LGTM  ·  PrepNext  ·  AgriSmart  ·  NexusOS"),
+    ("tag",  "Engineering reliable systems where AI meets distributed computing."),
+    ("gap",  ""),
+    ("kv", "Role",           "Software Engineer"),
+    ("kv", "Specialization", "Backend Systems  ·  AI Infrastructure  ·  Distributed Computing"),
+    ("kv", "Core CS",        "Algorithms  ·  Data Structures  ·  Operating Systems  ·  Computer Networks  ·  DBMS  ·  Concurrency  ·  System Design"),
+    ("kv", "Languages",      "C++  ·  Python  ·  TypeScript  ·  Go"),
+    ("kv", "Backend",        "FastAPI  ·  Node.js  ·  Express  ·  REST  ·  gRPC  ·  WebSockets"),
+    ("kv", "Databases",      "PostgreSQL  ·  MongoDB  ·  Redis  ·  Supabase"),
+    ("kv", "Infrastructure", "Linux  ·  Docker  ·  Git  ·  GitHub Actions  ·  AWS"),
+    ("kv", "AI Engineering", "LLM Applications  ·  RAG Pipelines  ·  Agentic Systems  ·  LangGraph  ·  MCP  ·  OpenAI  ·  Gemini"),
+    ("kv", "Current Focus",  "Distributed Systems  ·  AI Agents  ·  High Performance APIs"),
+    ("kv", "Projects",       "LGTM  ·  PrepNext  ·  AgriSmart  ·  NexusOS"),
     ("gap", ""),
     ("hdr",  "Contact"),
     ("rule", ""),
@@ -40,6 +43,9 @@ card = [
     ("kv", "Email",    "ashutoshsharma1395@gmail.com"),
 ]
 
+# label column auto-sizes to the longest key (+2 for the ": " gap)
+LW = max(len(v[1]) for v in card if v[0] == "kv") + 2
+
 # ---------------------------------------------------------------- layout
 CH_W, CH_H = 7.55, 15.5       # monospace cell size (px) @ 12.5px font
 PAD = 26
@@ -47,9 +53,10 @@ ART_X = PAD
 CARD_X = PAD + COLS * CH_W + 40
 TOP = PAD + 10
 
-# widest card line (label col = 10 chars + value) drives canvas width
+# widest card line (label col + value, or the tagline) drives canvas width
 card_chars = max([len(v[1]) for v in card if v[0] == "hdr"]
-                 + [11 + len(v[2]) for v in card if v[0] == "kv"])
+                 + [len(v[1]) for v in card if v[0] == "tag"]
+                 + [LW + len(v[2]) for v in card if v[0] == "kv"])
 
 art_h = TOP + len(lines) * CH_H
 card_h = TOP + (len(card) + 3) * CH_H
@@ -117,7 +124,7 @@ logo_end = LOGO_T + len(lines) * LOGO_STAG
 
 # ---- info card: types in row by row ------------------------------------
 y = TOP + 26
-rule = "─" * 34
+rule = "─" * card_chars
 row = 0
 CARD_T = logo_end - 0.25          # start slightly before the logo finishes
 def cd():                          # delay for the current card row
@@ -132,13 +139,16 @@ for item in card:
     elif kind == "rule":
         parts.append(t(CARD_X, y, rule, DIM, delay=cd()))
         y += CH_H; row += 1
+    elif kind == "tag":
+        parts.append(t(CARD_X, y, item[1], VAL, delay=cd(), grid=False))
+        y += CH_H; row += 1
     elif kind == "gap":
         y += CH_H * 0.6
     elif kind == "kv":
         _, k, v = item
         d = cd()
-        parts.append(t(CARD_X, y, (k + ":").ljust(11), KEY, "bold", delay=d))
-        parts.append(t(CARD_X + 11 * CH_W, y, v, VAL, delay=d))
+        parts.append(t(CARD_X, y, (k + ":").ljust(LW), KEY, "bold", delay=d))
+        parts.append(t(CARD_X + LW * CH_W, y, v, VAL, delay=d))
         y += CH_H; row += 1
 
 # ---- prompt line + blinking cursor -------------------------------------
