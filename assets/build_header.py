@@ -36,7 +36,7 @@ card = [
     ("hdr",  "Contact"),
     ("rule", ""),
     ("kv", "Site",     "https://ashutoshsharma1309.vercel.app"),
-    ("kv", "LinkedIn", "in/ashutoshsharma1309"),
+    ("kv", "LinkedIn", "https://www.linkedin.com/in/ashutoshsharma1309/"),
     ("kv", "Email",    "ashutoshsharma1395@gmail.com"),
 ]
 
