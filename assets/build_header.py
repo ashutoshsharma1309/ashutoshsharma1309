@@ -23,18 +23,15 @@ GREEN = "#9ece6a"     # prompt comment
 card = [
     ("hdr",  "ashutoshsharma1309@github"),
     ("rule", ""),
-    ("tag",  "Engineering reliable systems where AI meets distributed computing."),
+    ("tag",  "Building reliable software with strong CS fundamentals."),
     ("gap",  ""),
-    ("kv", "Role",           "Software Engineer"),
-    ("kv", "Specialization", "Backend Systems  ·  AI Infrastructure  ·  Distributed Computing"),
-    ("kv", "Core CS",        "Algorithms  ·  Data Structures  ·  Operating Systems  ·  Computer Networks  ·  DBMS  ·  Concurrency  ·  System Design"),
-    ("kv", "Languages",      "C++  ·  Python  ·  TypeScript  ·  Go"),
-    ("kv", "Backend",        "FastAPI  ·  Node.js  ·  Express  ·  REST  ·  gRPC  ·  WebSockets"),
-    ("kv", "Databases",      "PostgreSQL  ·  MongoDB  ·  Redis  ·  Supabase"),
-    ("kv", "Infrastructure", "Linux  ·  Docker  ·  Git  ·  GitHub Actions  ·  AWS"),
-    ("kv", "AI Engineering", "LLM Applications  ·  RAG Pipelines  ·  Agentic Systems  ·  LangGraph  ·  MCP  ·  OpenAI  ·  Gemini"),
-    ("kv", "Current Focus",  "Distributed Systems  ·  AI Agents  ·  High Performance APIs"),
-    ("kv", "Projects",       "LGTM  ·  PrepNext  ·  AgriSmart  ·  NexusOS"),
+    ("sec", "Role",      ["Software Engineer"]),
+    ("sec", "Focus",     ["Backend Systems", "AI Infrastructure"]),
+    ("sec", "Core CS",   ["DSA • OS • CN • DBMS • System Design"]),
+    ("sec", "Languages", ["C++ • Python • TypeScript"]),
+    ("sec", "Stack",     ["FastAPI • Express", "PostgreSQL • Redis", "Docker • Linux"]),
+    ("sec", "AI",        ["OpenAI", "Gemini", "LangGraph", "MCP"]),
+    ("sec", "Projects",  ["LGTM", "PrepNext", "NexusOS", "AgriSmart"]),
     ("gap", ""),
     ("hdr",  "Contact"),
     ("rule", ""),
@@ -43,7 +40,8 @@ card = [
     ("kv", "Email",    "ashutoshsharma1395@gmail.com"),
 ]
 
-# label column auto-sizes to the longest key (+2 for the ": " gap)
+INDENT = 4            # spaces the value lines under a section label are indented
+# label column auto-sizes to the longest contact key (+2 for the ": " gap)
 LW = max(len(v[1]) for v in card if v[0] == "kv") + 2
 
 # ---------------------------------------------------------------- layout
@@ -53,13 +51,24 @@ ART_X = PAD
 CARD_X = PAD + COLS * CH_W + 40
 TOP = PAD + 10
 
-# widest card line (label col + value, or the tagline) drives canvas width
+# widest card line (label, indented value, contact row, or tagline) drives width
 card_chars = max([len(v[1]) for v in card if v[0] == "hdr"]
                  + [len(v[1]) for v in card if v[0] == "tag"]
-                 + [LW + len(v[2]) for v in card if v[0] == "kv"])
+                 + [LW + len(v[2]) for v in card if v[0] == "kv"]
+                 + [len(v[1]) + 1 for v in card if v[0] == "sec"]
+                 + [INDENT + len(vl) for v in card if v[0] == "sec" for vl in v[2]])
+
+def card_rows():                       # rendered line count (sections span many)
+    n = 0.0
+    for it in card:
+        k = it[0]
+        if k in ("hdr", "rule", "tag", "kv"): n += 1
+        elif k == "gap":                      n += 0.6
+        elif k == "sec":                      n += 1 + len(it[2]) + 0.3
+    return n
 
 art_h = TOP + len(lines) * CH_H
-card_h = TOP + (len(card) + 3) * CH_H
+card_h = TOP + (card_rows() + 2) * CH_H
 HEIGHT = int(max(art_h, card_h) + PAD + 30)
 WIDTH = int(CARD_X + card_chars * CH_W + PAD + 8)
 
@@ -142,6 +151,14 @@ for item in card:
     elif kind == "tag":
         parts.append(t(CARD_X, y, item[1], VAL, delay=cd(), grid=False))
         y += CH_H; row += 1
+    elif kind == "sec":
+        _, k, vlines = item
+        parts.append(t(CARD_X, y, k + ":", KEY, "bold", delay=cd()))
+        y += CH_H; row += 1
+        for vl in vlines:
+            parts.append(t(CARD_X + INDENT * CH_W, y, vl, VAL, delay=cd()))
+            y += CH_H; row += 1
+        y += CH_H * 0.3
     elif kind == "gap":
         y += CH_H * 0.6
     elif kind == "kv":
