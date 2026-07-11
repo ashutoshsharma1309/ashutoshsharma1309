@@ -147,7 +147,7 @@ py = HEIGHT - PAD
 parts.append(t(PAD, py, "ashutosh@dev ~>", KEY, "bold", delay=PROMPT_T))
 parts.append(t(PAD + 16 * CH_W, py, "# thanks for stopping by :)", VAL, delay=PROMPT_T))
 cur_x = PAD + (16 + 27) * CH_W
-parts.append(f'<rect x="{cur_x:.1f}" y="{py-11:.1f}" width="{CH_W*0.85:.1f}" height="13" fill="{GREEN}" opacity="0">'
+parts.append(f'<rect x="{cur_x:.1f}" y="{py-11:.1f}" width="{CH_W*0.85:.1f}" height="13" fill="{VAL}" opacity="0">'
              f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.5;0.5;1" '
              f'dur="1s" begin="{PROMPT_T+0.25:.2f}s" repeatCount="indefinite"/></rect>')
 
