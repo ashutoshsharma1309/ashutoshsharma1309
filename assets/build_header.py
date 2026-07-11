@@ -12,11 +12,12 @@ lines = [ln for ln in lines if ln.strip()]      # drop blank lines
 COLS = max(len(ln) for ln in lines)
 
 # ---------------------------------------------------------------- info card
-RED = "#ff6b6b"       # header labels (Daksh uses a red/pink)
-KEY = "#f7768e"       # key labels
-VAL = "#c0caf5"       # values
-DIM = "#565f89"       # divider / dim
-ART = "#e2e6f3"       # ascii art colour (bright bat)
+BG    = "#000000"     # window background (Batman black)
+RED = "#ffd200"       # header bar (Batman yellow)
+KEY = "#ffd200"       # key labels (Focus, Edu, …) — Batman yellow
+VAL = "#ffffff"       # values — white
+DIM = "#3a3a3a"       # divider / dim
+ART = "#ffd200"       # ascii art colour (yellow bat)
 GREEN = "#9ece6a"     # prompt comment
 
 card = [
@@ -87,8 +88,8 @@ def t(x, y, s, fill, weight="normal", delay=None, anchor=None, grid=True):
 
 parts = []
 # background window
-parts.append(f'<rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="12" fill="#0d0f17"/>')
-parts.append(f'<rect x="1" y="1" width="{WIDTH-2}" height="{HEIGHT-2}" rx="11" fill="none" stroke="#1f2335" stroke-width="1.5"/>')
+parts.append(f'<rect x="0" y="0" width="{WIDTH}" height="{HEIGHT}" rx="12" fill="{BG}"/>')
+parts.append(f'<rect x="1" y="1" width="{WIDTH-2}" height="{HEIGHT-2}" rx="11" fill="none" stroke="#ffd200" stroke-width="1.5" stroke-opacity="0.35"/>')
 # traffic lights
 for i, c in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
     parts.append(f'<circle cx="{22 + i*20}" cy="18" r="6" fill="{c}"/>')
@@ -126,7 +127,7 @@ for item in card:
     if kind == "hdr":
         d = cd()
         parts.append(f'<rect x="{CARD_X-6:.1f}" y="{y-12:.1f}" width="{len(item[1])*CH_W+12:.1f}" height="18" rx="3" fill="{RED}" opacity="0">{fade_in(d)}</rect>')
-        parts.append(t(CARD_X, y, item[1], "#0d0f17", "bold", delay=d))
+        parts.append(t(CARD_X, y, item[1], BG, "bold", delay=d))
         y += CH_H; row += 1
     elif kind == "rule":
         parts.append(t(CARD_X, y, rule, DIM, delay=cd()))
