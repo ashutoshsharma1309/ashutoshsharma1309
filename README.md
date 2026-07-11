@@ -20,13 +20,15 @@
 
 ## Hi, I'm Ashutosh 👋
 
-> CS undergrad at **BMSIT&M, Bengaluru**. I build full-stack products and GenAI systems that hold up in the real world — multi-LLM code-review pipelines, a campus-placement platform, and an on-device health app. I care about the messy parts: imperfect data, broken assumptions, and the reasoning that has to hold anyway. Currently aiming for **SDE / AI-Engineering** roles and research-oriented internships.
+CS undergraduate.
 
-**Right now I'm working on**
+Building scalable software at the intersection of **Backend Engineering**, **AI Systems**, and **Distributed Computing**.
 
-- Multi-LLM & agentic systems — orchestration, RAG, and honest evaluation
-- Full-stack TypeScript platforms with clean architecture
-- Problem-solving in C++ &nbsp;·&nbsp; **900+ solved on LeetCode**
+### Focus
+
+- AI Agents &nbsp;·&nbsp; RAG &nbsp;·&nbsp; LLM Orchestration
+- Backend Systems &nbsp;·&nbsp; FastAPI &nbsp;·&nbsp; PostgreSQL
+- C++ &nbsp;·&nbsp; System Design &nbsp;·&nbsp; Algorithms
 
 <!-- ────────────────────────────  PROJECTS  ──────────────────────────── -->
 
