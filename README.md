@@ -43,7 +43,7 @@ I enjoy solving engineering problems involving LLM orchestration, distributed se
 
 🏆 10× Hackathon Winner & Podium Finisher
 
-👨‍💻 1500+ Algorithmic Problems Solved (LeetCode + Codeforces)
+👨‍💻 1500+ Competitive Programming Problems Solved (LeetCode + Codeforces)
 
 🚀 Built AI-powered code intelligence using Tree-sitter, PageRank, OpenAI & Gemini
 
