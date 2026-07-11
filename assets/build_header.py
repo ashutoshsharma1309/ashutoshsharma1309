@@ -118,12 +118,10 @@ cxm, mid = WIDTH / 2, HEIGHT * 0.44
 barw = 260
 barx = cxm - barw / 2
 boot = []
-boot.append(t(cxm, mid - 18, "> booting portfolio...", GREEN, "bold",
-              anchor="middle", grid=False))
 boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="{barw}" height="13" rx="4" fill="none" stroke="{DIM}"/>')
 boot.append(f'<rect x="{barx:.1f}" y="{mid:.1f}" width="0" height="13" rx="4" fill="{GREEN}">'
             f'<animate attributeName="width" from="0" to="{barw}" begin="0.25s" dur="{BOOT_END-0.35:.2f}s" fill="freeze"/></rect>')
-boot.append(t(cxm, mid + 33, "booting portfolio", DIM, anchor="middle", grid=False))
+boot.append(t(cxm, mid + 33, "> booting portfolio...", GREEN, "bold", anchor="middle", grid=False))
 parts.append(f'<g>{"".join(boot)}'
              f'<animate attributeName="opacity" from="1" to="0" begin="{BOOT_END:.2f}s" dur="0.35s" fill="freeze"/></g>')
 
