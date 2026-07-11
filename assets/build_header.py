@@ -21,21 +21,21 @@ ART = "#ffffff"       # ascii art colour (white bat)
 GREEN = "#9ece6a"     # prompt comment
 
 card = [
-    ("hdr",  "ashutosh@GitHub"),
+    ("hdr",  "ashutoshsharma1309@github"),
     ("rule", ""),
-    ("kv", "Focus",    "Building things that actually ship"),
-    ("kv", "Edu",      "B.E. CSE @ BMSIT&M  ·  CGPA 8.7"),
-    ("kv", "Roles",    "Full-Stack Dev  ·  GenAI Builder"),
-    ("kv", "CP",       "900+ solved on LeetCode"),
-    ("kv", "Lang",     "C++  ·  Python  ·  TypeScript  ·  Swift"),
-    ("kv", "Web",      "React  ·  Node  ·  Express  ·  FastAPI"),
-    ("kv", "Data",     "PostgreSQL  ·  Mongo  ·  Redis  ·  Prisma"),
-    ("kv", "AI/ML",    "Claude  ·  OpenAI  ·  Gemini  ·  LangChain"),
-    ("kv", "Ships",    "LGTM  ·  PrepNext  ·  AgriSmart"),
+    ("kv", "Focus",     "Building things that actually ship"),
+    ("kv", "Edu",       "B.E. CSE @ BMSIT&M"),
+    ("kv", "Roles",     "Software Developer  ·  ML Engineer"),
+    ("kv", "CP",        "900+ on LeetCode  ·  600+ on Codeforces"),
+    ("kv", "Languages", "C++  ·  C  ·  Python  ·  TypeScript  ·  Swift  ·  JavaScript"),
+    ("kv", "Web",       "React  ·  Node  ·  Express  ·  FastAPI"),
+    ("kv", "Database",  "MongoDB  ·  Supabase  ·  Redis  ·  Prisma"),
+    ("kv", "AI/ML",     "Claude  ·  OpenAI  ·  Gemini  ·  Perplexity"),
+    ("kv", "Ships",     "LGTM  ·  PrepNext  ·  AgriSmart  ·  NexusOS"),
     ("gap", ""),
     ("hdr",  "Contact"),
     ("rule", ""),
-    ("kv", "Site",     "ashutoshsharma1309.vercel.app"),
+    ("kv", "Site",     "https://ashutoshsharma1309.vercel.app"),
     ("kv", "LinkedIn", "in/ashutoshsharma1309"),
     ("kv", "Email",    "ashutoshsharma1395@gmail.com"),
 ]
@@ -49,7 +49,7 @@ TOP = PAD + 10
 
 # widest card line (label col = 10 chars + value) drives canvas width
 card_chars = max([len(v[1]) for v in card if v[0] == "hdr"]
-                 + [10 + len(v[2]) for v in card if v[0] == "kv"])
+                 + [11 + len(v[2]) for v in card if v[0] == "kv"])
 
 art_h = TOP + len(lines) * CH_H
 card_h = TOP + (len(card) + 3) * CH_H
@@ -137,8 +137,8 @@ for item in card:
     elif kind == "kv":
         _, k, v = item
         d = cd()
-        parts.append(t(CARD_X, y, (k + ":").ljust(10), KEY, "bold", delay=d))
-        parts.append(t(CARD_X + 10 * CH_W, y, v, VAL, delay=d))
+        parts.append(t(CARD_X, y, (k + ":").ljust(11), KEY, "bold", delay=d))
+        parts.append(t(CARD_X + 11 * CH_W, y, v, VAL, delay=d))
         y += CH_H; row += 1
 
 # ---- prompt line + blinking cursor -------------------------------------
