@@ -115,18 +115,6 @@ I reach for whatever fits the problem — most often:
 | **Mobile** | Swift · SwiftUI · watchOS · HealthKit · CoreMotion · WatchConnectivity |
 | **Tooling** | Git · Figma · Postman · BullMQ · Socket.IO · Tree-sitter |
 
-<!-- ────────────────────────────  STATS  ─────────────────────────────── -->
-
-## GitHub
-
-<div align="center">
-
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=ashutoshsharma1309&show_icons=true&hide_border=true&hide_title=true&count_private=true&include_all_commits=true&theme=tokyonight&icon_color=ff6b6b&hide=issues" alt="GitHub stats for ashutoshsharma1309"/>
-  &nbsp;&nbsp;
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ashutoshsharma1309&layout=compact&hide_border=true&langs_count=6&theme=tokyonight&title_color=ff6b6b" alt="Most-used languages"/>
-
-</div>
-
 <!-- ──────────────────────────  ACHIEVEMENTS  ─────────────────────────── -->
 
 ## Selected Wins
