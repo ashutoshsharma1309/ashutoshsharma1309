@@ -23,7 +23,8 @@ GREEN = "#9ece6a"     # prompt comment
 card = [
     ("hdr",  "ashutoshsharma1309@github"),
     ("rule", ""),
-    ("tag",  "Building reliable software with strong CS fundamentals."),
+    ("tag",  "Built on algorithms."),
+    ("tag",  "Powered by curiosity."),
     ("gap",  ""),
     ("sec", "Role",      ["Software Engineer"]),
     ("sec", "Focus",     ["Backend Systems", "AI Infrastructure"]),
